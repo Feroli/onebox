@@ -1,5 +1,8 @@
 plugins {
     id("java")
+    id("org.springframework.boot") version "3.1.5"
+
+
 }
 
 group = "org.example"
@@ -10,10 +13,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("com.h2database:h2")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+apply(plugin = "io.spring.dependency-management")
+
