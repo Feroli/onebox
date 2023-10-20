@@ -1,8 +1,6 @@
 package org.onebox.service;
 
 import org.onebox.model.Cart;
-import org.onebox.repository.CartRepository;
-import org.onebox.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
