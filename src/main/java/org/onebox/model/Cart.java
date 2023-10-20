@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Cart {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Product> products;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     public Cart() {

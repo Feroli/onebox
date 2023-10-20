@@ -72,4 +72,11 @@ public class CartService {
     public void deleteAllCarts() {
         cartRepository.deleteAll();
     }
+    public void deleteAllCarts(List<Cart> cartsToDelete) {
+        cartRepository.deleteAll(cartsToDelete);
+    }
+
+    public List<Cart> getCartsCreatedBeforeDate(LocalDateTime creationDateTime) {
+        return cartRepository.findByCreatedAtBefore(creationDateTime);
+    }
 }
